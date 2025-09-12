@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta tag for Facebook domain verification -->
+    <meta name="facebook-domain-verification" content="sey8jx0ayrkf318k5hkjcz4nfi4zbn" />
     <title>Catalytic Verticals LLC - Let Us Build Your Vertical Empire</title>
     <meta name="description" content="Leading WhatsApp Business integration company. We build market-dominating solutions across industry verticals. Proven success with ZapManejo livestock management.">
     <meta name="keywords" content="WhatsApp Business API, vertical integration, enterprise software, business automation, livestock management, education technology">
-    
+   
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: #1a1a1a;
             background: #ffffff;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
         /* Header */
         header {
             position: fixed;
@@ -37,39 +36,33 @@
             z-index: 1000;
             border-bottom: 1px solid #e5e5e5;
         }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
         }
-
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
             color: #0066cc;
             text-decoration: none;
         }
-
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
             align-items: center;
         }
-
         .nav-links a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
             transition: color 0.3s;
         }
-
         .nav-links a:hover {
             color: #0066cc;
         }
-
         /* Language Switcher */
         .language-switcher {
             display: flex;
@@ -77,7 +70,6 @@
             align-items: center;
             margin-left: 1rem;
         }
-
         .lang-tab {
             padding: 0.5rem 0.75rem;
             border: 2px solid #e5e5e5;
@@ -89,23 +81,19 @@
             transition: all 0.3s;
             cursor: pointer;
         }
-
         .lang-tab:hover {
             border-color: #0066cc;
             color: #0066cc;
         }
-
         .lang-tab.active {
             background: #0066cc;
             border-color: #0066cc;
             color: white;
         }
-
         .lang-tab.active:hover {
             background: #004499;
             border-color: #004499;
         }
-
         .cta-button {
             background: linear-gradient(135deg, #0066cc, #004499);
             color: white;
@@ -117,12 +105,10 @@
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
-
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
         }
-
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #0066cc 0%, #004499 50%, #002266 100%);
@@ -132,7 +118,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -143,26 +128,22 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
             opacity: 0.1;
         }
-
         .hero-content {
             position: relative;
             z-index: 1;
         }
-
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
             line-height: 1.2;
         }
-
         .hero .tagline {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
             color: #87ceeb;
         }
-
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
@@ -171,14 +152,12 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .hero-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
-
         .btn-primary {
             background: white;
             color: #0066cc;
@@ -190,12 +169,10 @@
             transition: all 0.3s;
             font-size: 1.1rem;
         }
-
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
         }
-
         .btn-secondary {
             background: transparent;
             color: white;
@@ -207,17 +184,14 @@
             transition: all 0.3s;
             font-size: 1.1rem;
         }
-
         .btn-secondary:hover {
             background: white;
             color: #0066cc;
         }
-
         /* Section Styles */
         .section {
             padding: 80px 0;
         }
-
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -225,7 +199,6 @@
             margin-bottom: 1rem;
             color: #1a1a1a;
         }
-
         .section-subtitle {
             text-align: center;
             font-size: 1.25rem;
@@ -235,19 +208,38 @@
             margin-left: auto;
             margin-right: auto;
         }
-
+        /* About Section */
+        .about {
+            background: #f8fafc;
+        }
+        .about-content {
+            text-align: center;
+        }
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-info {
+            margin-top: 1.5rem;
+        }
+        .contact-info p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            color: #333;
+        }
         /* Approach Section */
         .approach {
             background: #f8fafc;
         }
-
         .approach-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-
         .approach-card {
             background: white;
             padding: 2rem;
@@ -256,12 +248,10 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .approach-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
-
         .approach-icon {
             width: 80px;
             height: 80px;
@@ -274,7 +264,6 @@
             font-size: 2rem;
             color: white;
         }
-
         /* Verticals Section */
         .verticals-grid {
             display: grid;
@@ -282,7 +271,6 @@
             gap: 2rem;
             margin-top: 3rem;
         }
-
         .vertical-card {
             background: white;
             border: 2px solid #e5e5e5;
@@ -292,13 +280,11 @@
             position: relative;
             overflow: hidden;
         }
-
         .vertical-card:hover {
             border-color: #0066cc;
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 102, 204, 0.15);
         }
-
         .vertical-status {
             position: absolute;
             top: 1rem;
@@ -309,39 +295,32 @@
             font-weight: 600;
             text-transform: uppercase;
         }
-
         .status-launched {
             background: #10b981;
             color: white;
         }
-
         .status-development {
             background: #f59e0b;
             color: white;
         }
-
         .status-planned {
             background: #6b7280;
             color: white;
         }
-
         .status-custom {
             background: #8b5cf6;
             color: white;
         }
-
         .vertical-card h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
             color: #1a1a1a;
         }
-
         .vertical-card .subtitle {
             color: #0066cc;
             font-weight: 600;
             margin-bottom: 1rem;
         }
-
         .vertical-link {
             display: inline-block;
             margin-top: 1rem;
@@ -349,48 +328,40 @@
             text-decoration: none;
             font-weight: 600;
         }
-
         .vertical-link:hover {
             text-decoration: underline;
         }
-
         /* Case Study Section */
         .case-study {
             background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
             color: white;
         }
-
         .case-study-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
-
         .case-study-text h2 {
             color: white;
         }
-
         .case-study-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
-
         .stat {
             text-align: center;
             padding: 1.5rem;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
         }
-
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
             color: #87ceeb;
             margin-bottom: 0.5rem;
         }
-
         /* Why WhatsApp Section */
         .whatsapp-stats {
             display: grid;
@@ -398,50 +369,42 @@
             gap: 2rem;
             margin-top: 3rem;
         }
-
         .whatsapp-stat {
             text-align: center;
             padding: 2rem;
             background: #f8fafc;
             border-radius: 12px;
         }
-
         .whatsapp-stat .number {
             font-size: 3rem;
             font-weight: 800;
             color: #0066cc;
             margin-bottom: 0.5rem;
         }
-
         /* Contact Section */
         .contact {
             background: #f8fafc;
         }
-
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
         }
-
         .contact-form {
             background: white;
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
-
         .form-group {
             margin-bottom: 1.5rem;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
             color: #333;
         }
-
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -452,19 +415,16 @@
             font-size: 1rem;
             transition: border-color 0.3s;
         }
-
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #0066cc;
         }
-
         .form-group textarea {
             height: 100px;
             resize: vertical;
         }
-
         /* Footer */
         footer {
             background: #1a1a1a;
@@ -472,13 +432,11 @@
             padding: 2rem 0;
             text-align: center;
         }
-
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-
             .language-switcher {
                 position: fixed;
                 top: 1rem;
@@ -490,31 +448,25 @@
                 border-radius: 8px;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             }
-
             .hero h1 {
                 font-size: 2.5rem;
             }
-
             .hero .tagline {
                 font-size: 1.25rem;
             }
-
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-
             .case-study-content,
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-
             .section-title {
                 font-size: 2rem;
             }
         }
-
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -526,7 +478,6 @@
                 transform: translateY(0);
             }
         }
-
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out;
         }
@@ -538,6 +489,7 @@
         <nav class="container">
             <a href="#" class="logo">Catalytic Verticals</a>
             <ul class="nav-links">
+                <li><a href="#about">About</a></li>
                 <li><a href="#approach">Our Approach</a></li>
                 <li><a href="#verticals">Verticals</a></li>
                 <li><a href="#case-study">Success Story</a></li>
@@ -551,7 +503,6 @@
             <a href="#contact" class="cta-button">Get Started</a>
         </nav>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -566,13 +517,25 @@
             </div>
         </div>
     </section>
-
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Catalytic Verticals</h2>
+            <div class="about-content fade-in-up">
+                <p>Founded by Michael Tinney, Catalytic Verticals LLC is a leading provider of WhatsApp Business API integrations, delivering innovative solutions to dominate industry verticals such as livestock management, education, and translation services.</p>
+                <div class="contact-info">
+                    <p>Phone: +1 (561) 803-5111</p>
+                    <p>Address: 4119 W Blue Heron Blvd, #71, Riviera Beach, FL 33404</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Our Approach Section -->
     <section id="approach" class="section approach">
         <div class="container">
             <h2 class="section-title">How We Catalyze Entire Verticals</h2>
             <p class="section-subtitle">Our proven methodology transforms industries through strategic WhatsApp Business integration</p>
-            
+           
             <div class="approach-grid">
                 <div class="approach-card">
                     <div class="approach-icon">🎯</div>
@@ -592,13 +555,12 @@
             </div>
         </div>
     </section>
-
     <!-- Our Verticals Section -->
     <section id="verticals" class="section">
         <div class="container">
             <h2 class="section-title">Our Current Verticals</h2>
             <p class="section-subtitle">From livestock management to education technology, we're building the future of WhatsApp business integration</p>
-            
+           
             <div class="verticals-grid">
                 <div class="vertical-card">
                     <div class="vertical-status status-launched">Launched</div>
@@ -607,21 +569,21 @@
                     <p>WhatsApp-based cattle and livestock management for Brazilian ranchers. Integrates seamlessly with existing farm management systems targeting medium to large operations (2,000+ head).</p>
                     <a href="https://zapmanejo.com" class="vertical-link" target="_blank">Visit ZapManejo.com →</a>
                 </div>
-                
+               
                 <div class="vertical-card">
                     <div class="vertical-status status-development">In Development</div>
                     <h3>mAyIhelp/MeuProfessor</h3>
                     <div class="subtitle">Education Technology</div>
                     <p>AI tutoring system through WhatsApp with school-controlled curriculum content. Available in both cloud-hosted and on-premises deployment for schools, tutors, and homeschool families.</p>
                 </div>
-                
+               
                 <div class="vertical-card">
                     <div class="vertical-status status-planned">Planned</div>
                     <h3>TraduFacil</h3>
                     <div class="subtitle">Translation Services</div>
                     <p>Real-time translation through WhatsApp with photo recognition for menus, signs, and documents. Voice translation capabilities targeting Brazilian immigrants and international businesses.</p>
                 </div>
-                
+               
                 <div class="vertical-card">
                     <div class="vertical-status status-custom">Available</div>
                     <h3>Custom Vertical Solutions</h3>
@@ -632,7 +594,6 @@
             </div>
         </div>
     </section>
-
     <!-- Case Study Section -->
     <section id="case-study" class="section case-study">
         <div class="container">
@@ -664,13 +625,12 @@
             </div>
         </div>
     </section>
-
     <!-- Why WhatsApp Section -->
     <section class="section">
         <div class="container">
             <h2 class="section-title">Why WhatsApp Integration?</h2>
             <p class="section-subtitle">WhatsApp isn't just messaging - it's the business platform of the future</p>
-            
+           
             <div class="whatsapp-stats">
                 <div class="whatsapp-stat">
                     <div class="number">99%</div>
@@ -695,13 +655,12 @@
             </div>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
             <h2 class="section-title">Ready to Build Your Vertical Empire?</h2>
             <p class="section-subtitle">Let's discuss how WhatsApp integration can dominate your industry vertical</p>
-            
+           
             <div class="contact-grid">
                 <div class="contact-form">
                     <h3>Schedule Your Strategy Session</h3>
@@ -738,7 +697,7 @@
                         <button type="submit" class="cta-button" style="width: 100%;">Schedule Strategy Session</button>
                     </form>
                 </div>
-                
+               
                 <div>
                     <h3>Multiple Ways to Connect</h3>
                     <div style="margin-bottom: 2rem;">
@@ -765,32 +724,37 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Catalytic Verticals LLC. All rights reserved. | Let us build your vertical empire.</p>
         </div>
     </footer>
-
     <script>
         // Language translations object
         const translations = {
             en: {
                 // Navigation
+                navAbout: "About",
                 navApproach: "Our Approach",
-                navVerticals: "Verticals", 
+                navVerticals: "Verticals",
                 navCaseStudy: "Success Story",
                 navContact: "Contact",
                 ctaGetStarted: "Get Started",
-                
+               
                 // Hero Section
                 heroTitle: "We Don't Just Build Software",
                 heroTagline: "Let Us Build Your Vertical Empire",
                 heroDescription: "Catalytic Verticals develops WhatsApp-native business solutions that integrate with your existing systems to dominate specific industry verticals. We transform traditional industries by leveraging WhatsApp's 99% adoption rate.",
                 heroBtnPrimary: "Explore Our Verticals",
                 heroBtnSecondary: "Schedule Demo",
-                
+               
+                // About Section
+                aboutTitle: "About Catalytic Verticals",
+                aboutDescription: "Founded by Michael Tinney, Catalytic Verticals LLC is a leading provider of WhatsApp Business API integrations, delivering innovative solutions to dominate industry verticals such as livestock management, education, and translation services.",
+                aboutPhone: "Phone: +1 (561) 803-5111",
+                aboutAddress: "Address: 4119 W Blue Heron Blvd, #71, Riviera Beach, FL 33404",
+               
                 // Approach Section
                 approachTitle: "How We Catalyze Entire Verticals",
                 approachSubtitle: "Our proven methodology transforms industries through strategic WhatsApp Business integration",
@@ -800,7 +764,7 @@
                 approachCard2Text: "Our solutions complement existing systems without disruption, providing seamless integration that enhances rather than replaces current workflows.",
                 approachCard3Title: "Premium B2B Focus",
                 approachCard3Text: "We target enterprise clients with premium solutions, ensuring sustainable growth and market-leading positioning.",
-                
+               
                 // Verticals Section
                 verticalsTitle: "Our Current Verticals",
                 verticalsSubtitle: "From livestock management to education technology, we're building the future of WhatsApp business integration",
@@ -814,7 +778,7 @@
                 customSubtitle: "Enterprise Development",
                 customDescription: "\"Build your own\" modular WhatsApp integrations with enterprise custom development and API integration consulting for your specific industry vertical.",
                 customLink: "Request Custom Solution →",
-                
+               
                 // Case Study Section
                 caseStudyTitle: "ZapManejo Success Story",
                 caseStudyText1: "Our flagship product proves the power of vertical domination. ZapManejo has transformed livestock management for Brazilian ranchers, demonstrating our ability to build market-leading WhatsApp integrations.",
@@ -824,7 +788,7 @@
                 statAdoption: "WhatsApp Adoption",
                 statUptime: "Platform Uptime",
                 statIntegration: "Integration Success",
-                
+               
                 // WhatsApp Section
                 whatsappTitle: "Why WhatsApp Integration?",
                 whatsappSubtitle: "WhatsApp isn't just messaging - it's the business platform of the future",
@@ -836,7 +800,7 @@
                 whatsappStat3Text: "Users already know how to use WhatsApp - no learning curve",
                 whatsappStat4Title: "Always Accessible",
                 whatsappStat4Text: "Mobile-first platform that works anywhere, anytime",
-                
+               
                 // Contact Section
                 contactTitle: "Ready to Build Your Vertical Empire?",
                 contactSubtitle: "Let's discuss how WhatsApp integration can dominate your industry vertical",
@@ -867,28 +831,35 @@
                 contactDirectText: "Email us at",
                 contactFlagship: "🚀 Flagship Product",
                 contactFlagshipText: "to see our proven livestock management solution",
-                
+               
                 // Footer
                 footerText: "© 2025 Catalytic Verticals LLC. All rights reserved. | Let us build your vertical empire.",
-                
+               
                 // Alerts
                 alertThankYou: "Thank you for your interest! We will contact you within 24 hours to schedule your strategy session."
             },
             pt: {
                 // Navigation
+                navAbout: "Sobre",
                 navApproach: "Nossa Abordagem",
                 navVerticals: "Verticais",
                 navCaseStudy: "Caso de Sucesso",
                 navContact: "Contato",
                 ctaGetStarted: "Começar",
-                
+               
                 // Hero Section
                 heroTitle: "Nós Não Apenas Criamos Software",
                 heroTagline: "Deixe-nos Construir Seu Império Vertical",
                 heroDescription: "A Catalytic Verticals desenvolve soluções de negócios nativas do WhatsApp que se integram aos seus sistemas existentes para dominar verticais específicas da indústria. Transformamos indústrias tradicionais aproveitando a taxa de adoção de 99% do WhatsApp.",
                 heroBtnPrimary: "Explore Nossas Verticais",
                 heroBtnSecondary: "Agendar Demo",
-                
+               
+                // About Section
+                aboutTitle: "Sobre a Catalytic Verticals",
+                aboutDescription: "Fundada por Michael Tinney, a Catalytic Verticals LLC é líder no fornecimento de integrações com a API do WhatsApp Business, entregando soluções inovadoras para dominar verticais da indústria, como gestão de gado, educação e serviços de tradução.",
+                aboutPhone: "Telefone: +1 (561) 803-5111",
+                aboutAddress: "Endereço: 4119 W Blue Heron Blvd, #71, Riviera Beach, FL 33404",
+               
                 // Approach Section
                 approachTitle: "Como Catalisamos Verticais Inteiras",
                 approachSubtitle: "Nossa metodologia comprovada transforma indústrias através da integração estratégica do WhatsApp Business",
@@ -898,7 +869,7 @@
                 approachCard2Text: "Nossas soluções complementam sistemas existentes sem interrupção, fornecendo integração perfeita que aprimora ao invés de substituir fluxos de trabalho atuais.",
                 approachCard3Title: "Foco Premium B2B",
                 approachCard3Text: "Miramos clientes empresariais com soluções premium, garantindo crescimento sustentável e posicionamento líder de mercado.",
-                
+               
                 // Verticals Section
                 verticalsTitle: "Nossas Verticais Atuais",
                 verticalsSubtitle: "Da gestão de gado à tecnologia educacional, estamos construindo o futuro da integração empresarial do WhatsApp",
@@ -912,7 +883,7 @@
                 customSubtitle: "Desenvolvimento Empresarial",
                 customDescription: "Integrações modulares \"construa o seu próprio\" do WhatsApp com desenvolvimento personalizado empresarial e consultoria de integração de API para sua vertical específica da indústria.",
                 customLink: "Solicitar Solução Personalizada →",
-                
+               
                 // Case Study Section
                 caseStudyTitle: "História de Sucesso do ZapManejo",
                 caseStudyText1: "Nosso produto principal prova o poder da dominação vertical. O ZapManejo transformou a gestão de gado para pecuaristas brasileiros, demonstrando nossa capacidade de construir integrações líderes de mercado do WhatsApp.",
@@ -922,7 +893,7 @@
                 statAdoption: "Adoção WhatsApp",
                 statUptime: "Tempo Ativo da Plataforma",
                 statIntegration: "Sucesso da Integração",
-                
+               
                 // WhatsApp Section
                 whatsappTitle: "Por que Integração WhatsApp?",
                 whatsappSubtitle: "WhatsApp não é apenas mensagens - é a plataforma de negócios do futuro",
@@ -934,7 +905,7 @@
                 whatsappStat3Text: "Usuários já sabem como usar WhatsApp - sem curva de aprendizado",
                 whatsappStat4Title: "Sempre Acessível",
                 whatsappStat4Text: "Plataforma mobile-first que funciona em qualquer lugar, a qualquer hora",
-                
+               
                 // Contact Section
                 contactTitle: "Pronto para Construir Seu Império Vertical?",
                 contactSubtitle: "Vamos discutir como a integração WhatsApp pode dominar sua vertical da indústria",
@@ -965,28 +936,35 @@
                 contactDirectText: "Envie-nos um email para",
                 contactFlagship: "🚀 Produto Principal",
                 contactFlagshipText: "para ver nossa solução comprovada de gestão de gado",
-                
+               
                 // Footer
                 footerText: "© 2025 Catalytic Verticals LLC. Todos os direitos reservados. | Deixe-nos construir seu império vertical.",
-                
+               
                 // Alerts
                 alertThankYou: "Obrigado pelo seu interesse! Entraremos em contato em até 24 horas para agendar sua sessão estratégica."
             },
             es: {
                 // Navigation
+                navAbout: "Acerca de",
                 navApproach: "Nuestro Enfoque",
                 navVerticals: "Verticales",
                 navCaseStudy: "Caso de Éxito",
                 navContact: "Contacto",
                 ctaGetStarted: "Comenzar",
-                
+               
                 // Hero Section
                 heroTitle: "No Solo Creamos Software",
                 heroTagline: "Déjanos Construir Tu Imperio Vertical",
                 heroDescription: "Catalytic Verticals desarrolla soluciones de negocio nativas de WhatsApp que se integran con sus sistemas existentes para dominar verticales específicas de la industria. Transformamos industrias tradicionales aprovechando la tasa de adopción del 99% de WhatsApp.",
                 heroBtnPrimary: "Explorar Nuestras Verticales",
                 heroBtnSecondary: "Programar Demo",
-                
+               
+                // About Section
+                aboutTitle: "Acerca de Catalytic Verticals",
+                aboutDescription: "Fundada por Michael Tinney, Catalytic Verticals LLC es líder en proporcionar integraciones con la API de WhatsApp Business, entregando soluciones innovadoras para dominar verticales de la industria como gestión de ganado, educación y servicios de traducción.",
+                aboutPhone: "Teléfono: +1 (561) 803-5111",
+                aboutAddress: "Dirección: 4119 W Blue Heron Blvd, #71, Riviera Beach, FL 33404",
+               
                 // Approach Section
                 approachTitle: "Cómo Catalizamos Verticales Enteras",
                 approachSubtitle: "Nuestra metodología probada transforma industrias a través de la integración estratégica de WhatsApp Business",
@@ -996,7 +974,7 @@
                 approachCard2Text: "Nuestras soluciones complementan los sistemas existentes sin interrupción, proporcionando integración perfecta que mejora en lugar de reemplazar los flujos de trabajo actuales.",
                 approachCard3Title: "Enfoque Premium B2B",
                 approachCard3Text: "Apuntamos a clientes empresariales con soluciones premium, asegurando crecimiento sostenible y posicionamiento líder del mercado.",
-                
+               
                 // Verticals Section
                 verticalsTitle: "Nuestras Verticales Actuales",
                 verticalsSubtitle: "Desde gestión de ganado hasta tecnología educativa, estamos construyendo el futuro de la integración empresarial de WhatsApp",
@@ -1010,7 +988,7 @@
                 customSubtitle: "Desarrollo Empresarial",
                 customDescription: "Integraciones modulares \"construye tu propio\" de WhatsApp con desarrollo personalizado empresarial y consultoría de integración de API para tu vertical específica de la industria.",
                 customLink: "Solicitar Solución Personalizada →",
-                
+               
                 // Case Study Section
                 caseStudyTitle: "Historia de Éxito de ZapManejo",
                 caseStudyText1: "Nuestro producto insignia demuestra el poder de la dominación vertical. ZapManejo ha transformado la gestión de ganado para ganaderos brasileños, demostrando nuestra capacidad de construir integraciones líderes del mercado de WhatsApp.",
@@ -1020,7 +998,7 @@
                 statAdoption: "Adopción WhatsApp",
                 statUptime: "Tiempo Activo de Plataforma",
                 statIntegration: "Éxito de Integración",
-                
+               
                 // WhatsApp Section
                 whatsappTitle: "¿Por qué Integración WhatsApp?",
                 whatsappSubtitle: "WhatsApp no es solo mensajería - es la plataforma de negocios del futuro",
@@ -1032,7 +1010,7 @@
                 whatsappStat3Text: "Los usuarios ya saben cómo usar WhatsApp - sin curva de aprendizaje",
                 whatsappStat4Title: "Siempre Accesible",
                 whatsappStat4Text: "Plataforma móvil-first que funciona en cualquier lugar, en cualquier momento",
-                
+               
                 // Contact Section
                 contactTitle: "¿Listo para Construir Tu Imperio Vertical?",
                 contactSubtitle: "Discutamos cómo la integración WhatsApp puede dominar tu vertical de la industria",
@@ -1063,45 +1041,50 @@
                 contactDirectText: "Envíanos un email a",
                 contactFlagship: "🚀 Producto Insignia",
                 contactFlagshipText: "para ver nuestra solución probada de gestión de ganado",
-                
+               
                 // Footer
                 footerText: "© 2025 Catalytic Verticals LLC. Todos los derechos reservados. | Déjanos construir tu imperio vertical.",
-                
+               
                 // Alerts
                 alertThankYou: "¡Gracias por tu interés! Te contactaremos dentro de 24 horas para programar tu sesión estratégica."
             }
         };
-
         let currentLanguage = 'en';
-
         function switchLanguage(lang) {
             currentLanguage = lang;
-            
+           
             // Update active tab
             document.querySelectorAll('.lang-tab').forEach(tab => tab.classList.remove('active'));
             event.target.classList.add('active');
-            
+           
             // Get translations for selected language
             const t = translations[lang];
-            
+           
             // Update navigation
+            updateTextById('a[href="#about"]', t.navAbout);
             updateTextById('a[href="#approach"]', t.navApproach);
             updateTextById('a[href="#verticals"]', t.navVerticals);
             updateTextById('a[href="#case-study"]', t.navCaseStudy);
             updateTextById('a[href="#contact"]', t.navContact);
             updateTextById('a[href="#contact"].cta-button', t.ctaGetStarted);
-            
+           
             // Update hero section
             updateTextById('.hero h1', t.heroTitle);
             updateTextById('.hero .tagline', t.heroTagline);
             updateTextById('.hero p', t.heroDescription);
             updateTextById('.btn-primary', t.heroBtnPrimary);
             updateTextById('.btn-secondary', t.heroBtnSecondary);
-            
+           
+            // Update about section
+            updateTextById('#about .section-title', t.aboutTitle);
+            updateTextById('#about .about-content p', t.aboutDescription);
+            updateTextById('#about .contact-info p:nth-child(1)', t.aboutPhone);
+            updateTextById('#about .contact-info p:nth-child(2)', t.aboutAddress);
+           
             // Update approach section
             updateTextById('#approach .section-title', t.approachTitle);
             updateTextById('#approach .section-subtitle', t.approachSubtitle);
-            
+           
             const approachCards = document.querySelectorAll('.approach-card');
             if (approachCards.length >= 3) {
                 updateTextById(approachCards[0].querySelector('h3'), t.approachCard1Title);
@@ -1111,32 +1094,32 @@
                 updateTextById(approachCards[2].querySelector('h3'), t.approachCard3Title);
                 updateTextById(approachCards[2].querySelector('p'), t.approachCard3Text);
             }
-            
+           
             // Update verticals section
             updateTextById('#verticals .section-title', t.verticalsTitle);
             updateTextById('#verticals .section-subtitle', t.verticalsSubtitle);
-            
+           
             const verticalCards = document.querySelectorAll('.vertical-card');
             if (verticalCards.length >= 4) {
                 // ZapManejo
                 updateTextById(verticalCards[0].querySelector('.subtitle'), t.zapManejoSubtitle);
                 updateTextById(verticalCards[0].querySelector('p'), t.zapManejoDescription);
                 updateTextById(verticalCards[0].querySelector('.vertical-link'), t.zapManejoLink);
-                
+               
                 // Education
                 updateTextById(verticalCards[1].querySelector('.subtitle'), t.educationSubtitle);
                 updateTextById(verticalCards[1].querySelector('p'), t.educationDescription);
-                
+               
                 // Translation
                 updateTextById(verticalCards[2].querySelector('.subtitle'), t.translationSubtitle);
                 updateTextById(verticalCards[2].querySelector('p'), t.translationDescription);
-                
+               
                 // Custom
                 updateTextById(verticalCards[3].querySelector('.subtitle'), t.customSubtitle);
                 updateTextById(verticalCards[3].querySelector('p'), t.customDescription);
                 updateTextById(verticalCards[3].querySelector('.vertical-link'), t.customLink);
             }
-            
+           
             // Update case study section
             updateTextById('#case-study h2', t.caseStudyTitle);
             const caseStudyPs = document.querySelectorAll('.case-study-text p');
@@ -1145,7 +1128,7 @@
                 updateTextById(caseStudyPs[1], t.caseStudyText2);
             }
             updateTextById('.case-study .btn-primary', t.caseStudyBtn);
-            
+           
             const stats = document.querySelectorAll('.stat');
             if (stats.length >= 4) {
                 updateTextById(stats[0].querySelector('div:last-child'), t.statCattle);
@@ -1153,14 +1136,14 @@
                 updateTextById(stats[2].querySelector('div:last-child'), t.statUptime);
                 updateTextById(stats[3].querySelector('div:last-child'), t.statIntegration);
             }
-            
+           
             // Update WhatsApp section
             const sections = document.querySelectorAll('.section');
             const whatsappSection = sections[sections.length - 2]; // Second to last section
             if (whatsappSection) {
                 updateTextById(whatsappSection.querySelector('.section-title'), t.whatsappTitle);
                 updateTextById(whatsappSection.querySelector('.section-subtitle'), t.whatsappSubtitle);
-                
+               
                 const whatsappStats = whatsappSection.querySelectorAll('.whatsapp-stat');
                 if (whatsappStats.length >= 4) {
                     updateTextById(whatsappStats[0].querySelector('h3'), t.whatsappStat1Title);
@@ -1173,19 +1156,19 @@
                     updateTextById(whatsappStats[3].querySelector('p'), t.whatsappStat4Text);
                 }
             }
-            
+           
             // Update contact section
             updateTextById('#contact .section-title', t.contactTitle);
             updateTextById('#contact .section-subtitle', t.contactSubtitle);
             updateTextById('.contact-form h3', t.contactFormTitle);
-            
+           
             // Update form labels
             updateTextById('label[for="name"]', t.contactName);
             updateTextById('label[for="company"]', t.contactCompany);
             updateTextById('label[for="email"]', t.contactEmail);
             updateTextById('label[for="vertical"]', t.contactVertical);
             updateTextById('label[for="project-scope"]', t.contactScope);
-            
+           
             // Update form options
             const selectOptions = document.querySelectorAll('#vertical option');
             if (selectOptions.length >= 8) {
@@ -1198,18 +1181,18 @@
                 selectOptions[6].textContent = t.contactVerticalRetail;
                 selectOptions[7].textContent = t.contactVerticalOther;
             }
-            
+           
             const textarea = document.querySelector('#project-scope');
             if (textarea) textarea.placeholder = t.contactScopePlaceholder;
-            
+           
             updateTextById('button[type="submit"]', t.contactSubmit);
-            
+           
             // Update contact info
             const contactInfo = document.querySelector('.contact-grid > div:last-child');
             if (contactInfo) {
                 const headings = contactInfo.querySelectorAll('h3, h4');
                 const paragraphs = contactInfo.querySelectorAll('p');
-                
+               
                 if (headings.length >= 6 && paragraphs.length >= 5) {
                     headings[0].textContent = t.contactWaysTitle;
                     headings[1].textContent = t.contactDemo;
@@ -1217,7 +1200,7 @@
                     headings[3].textContent = t.contactPartnership;
                     headings[4].textContent = t.contactDirectTitle;
                     headings[5].textContent = t.contactFlagship;
-                    
+                   
                     paragraphs[0].textContent = t.contactDemoText;
                     paragraphs[1].textContent = t.contactCustomText;
                     paragraphs[2].textContent = t.contactPartnershipText;
@@ -1225,18 +1208,16 @@
                     paragraphs[4].innerHTML = '<a href="https://zapmanejo.com" target="_blank" style="color: #0066cc; font-weight: 600;">Visit ZapManejo.com</a> ' + t.contactFlagshipText;
                 }
             }
-            
+           
             // Update footer
             updateTextById('footer p', t.footerText);
         }
-
         function updateTextById(selector, text) {
             const element = typeof selector === 'string' ? document.querySelector(selector) : selector;
             if (element && text) {
                 element.textContent = text;
             }
         }
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1250,7 +1231,6 @@
                 }
             });
         });
-
         // Form submission handler
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
