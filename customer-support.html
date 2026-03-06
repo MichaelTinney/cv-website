@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support - Catalytic Verticals LLC</title>
+    <meta name="description" content="Get help with ZapManejo and Catalytic Verticals products. FAQs, contact options, and support resources.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7; color: #1a1a1a; background: #ffffff;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .container-narrow { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+        header {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000; border-bottom: 1px solid #e5e5e5;
+        }
+        nav {
+            display: flex; justify-content: space-between;
+            align-items: center; padding: 1rem 24px;
+            max-width: 1200px; margin: 0 auto;
+        }
+        .logo { font-size: 1.4rem; font-weight: 700; color: #0066cc; text-decoration: none; }
+        .nav-home { color: #0066cc; text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        .nav-home:hover { text-decoration: underline; }
+        .page-hero {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 50%, #002266 100%);
+            color: white; padding: 120px 0 60px; text-align: center;
+        }
+        .page-hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.75rem; }
+        .page-hero p { font-size: 1.1rem; opacity: 0.85; max-width: 600px; margin: 0 auto; }
+
+        /* Contact Cards */
+        .contact-section { padding: 60px 0 20px; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem; margin-top: 2.5rem;
+        }
+        .contact-card {
+            background: #fff; border: 2px solid #e5e5e5;
+            border-radius: 12px; padding: 1.75rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .contact-card:hover {
+            border-color: #0066cc;
+            box-shadow: 0 8px 24px rgba(0,102,204,0.12);
+            transform: translateY(-3px);
+        }
+        .contact-icon {
+            width: 64px; height: 64px;
+            background: linear-gradient(135deg, #0066cc, #004499);
+            border-radius: 50%; margin: 0 auto 1rem;
+            display: flex; align-items: center;
+            justify-content: center; font-size: 1.75rem;
+        }
+        .contact-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; color: #1a1a1a; }
+        .contact-card p { color: #555; font-size: 0.95rem; margin-bottom: 1rem; }
+        .contact-card .response-time {
+            font-size: 0.8rem; color: #888;
+            background: #f5f5f5; padding: 0.3rem 0.75rem;
+            border-radius: 20px; display: inline-block; margin-bottom: 1rem;
+        }
+        .btn-card {
+            display: inline-block;
+            background: linear-gradient(135deg, #0066cc, #004499);
+            color: white; padding: 0.65rem 1.5rem;
+            border-radius: 8px; text-decoration: none;
+            font-weight: 600; font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .btn-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(0,102,204,0.3);
+        }
+
+        /* FAQ Section */
+        .faq-section { padding: 20px 0 60px; background: #f8fafc; margin-top: 40px; }
+        .faq-section .container-narrow { padding-top: 40px; padding-bottom: 40px; }
+        .section-title {
+            font-size: 2rem; font-weight: 700; text-align: center;
+            margin-bottom: 0.5rem; color: #1a1a1a;
+        }
+        .section-subtitle {
+            text-align: center; color: #666; margin-bottom: 2.5rem; font-size: 1rem;
+        }
+        .faq-tabs {
+            display: flex; gap: 0.5rem; flex-wrap: wrap;
+            justify-content: center; margin-bottom: 2rem;
+        }
+        .faq-tab {
+            padding: 0.5rem 1.25rem;
+            border: 2px solid #e5e5e5;
+            border-radius: 25px;
+            background: white;
+            color: #555;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .faq-tab:hover { border-color: #0066cc; color: #0066cc; }
+        .faq-tab.active {
+            background: #0066cc; border-color: #0066cc;
+            color: white;
+        }
+        .faq-group { display: none; }
+        .faq-group.active { display: block; }
+        .faq-item {
+            background: white; border: 1px solid #e5e5e5;
+            border-radius: 10px; margin-bottom: 0.75rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%; text-align: left;
+            padding: 1.1rem 1.25rem;
+            background: none; border: none;
+            font-size: 1rem; font-weight: 600;
+            color: #1a1a1a;
+            cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+            gap: 1rem;
+        }
+        .faq-question:hover { color: #0066cc; }
+        .faq-chevron { font-size: 0.85rem; transition: transform 0.25s; flex-shrink: 0; }
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+        .faq-answer {
+            display: none; padding: 0 1.25rem 1.1rem;
+            color: #444; font-size: 0.97rem; line-height: 1.7;
+        }
+        .faq-item.open .faq-answer { display: block; }
+        .faq-answer a { color: #0066cc; }
+
+        /* Status Section */
+        .status-section { padding: 40px 0; }
+        .status-banner {
+            background: #ecfdf5; border: 2px solid #10b981;
+            border-radius: 12px; padding: 1.5rem 2rem;
+            display: flex; align-items: center; gap: 1rem;
+        }
+        .status-dot {
+            width: 14px; height: 14px;
+            background: #10b981; border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 4px rgba(16,185,129,0.2);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(16,185,129,0.2); }
+            50% { box-shadow: 0 0 0 8px rgba(16,185,129,0.1); }
+        }
+        .status-text h4 { font-size: 1rem; color: #065f46; margin-bottom: 0.2rem; }
+        .status-text p { color: #047857; font-size: 0.9rem; margin: 0; }
+
+        /* Business Hours */
+        .hours-section { padding: 20px 0 60px; }
+        .hours-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 2rem; margin-top: 2rem;
+        }
+        .hours-card {
+            background: white; border: 2px solid #e5e5e5;
+            border-radius: 12px; padding: 1.75rem;
+        }
+        .hours-card h3 { font-size: 1.1rem; color: #0066cc; margin-bottom: 1rem; }
+        .hours-row {
+            display: flex; justify-content: space-between;
+            padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;
+            font-size: 0.95rem;
+        }
+        .hours-row:last-child { border-bottom: none; }
+        .hours-row .day { color: #555; }
+        .hours-row .time { font-weight: 600; color: #1a1a1a; }
+        .badge-24-7 {
+            display: inline-block; background: #0066cc; color: white;
+            padding: 0.3rem 0.75rem; border-radius: 20px;
+            font-size: 0.8rem; font-weight: 700; margin-bottom: 0.75rem;
+        }
+        .escalation-path {
+            background: #f0f7ff; border-radius: 10px;
+            padding: 1.25rem 1.5rem; margin-top: 1rem;
+        }
+        .escalation-path h4 { font-size: 0.95rem; color: #0066cc; margin-bottom: 0.75rem; }
+        .escalation-step {
+            display: flex; align-items: flex-start;
+            gap: 0.75rem; margin-bottom: 0.6rem; font-size: 0.9rem; color: #444;
+        }
+        .step-num {
+            background: #0066cc; color: white;
+            width: 22px; height: 22px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem; font-weight: 700; flex-shrink: 0; margin-top: 1px;
+        }
+        footer {
+            background: #1a1a1a; color: white;
+            padding: 2rem 0; text-align: center; font-size: 0.9rem;
+        }
+        footer a { color: #87ceeb; text-decoration: none; margin: 0 0.5rem; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 768px) {
+            .page-hero h1 { font-size: 2rem; }
+            .hours-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Catalytic Verticals</a>
+            <a href="index.html" class="nav-home">← Back to Home</a>
+        </nav>
+    </header>
+
+    <div class="page-hero">
+        <div class="container">
+            <h1>Customer Support</h1>
+            <p>We're here to help you get the most out of ZapManejo and all Catalytic Verticals products. Choose the support channel that works best for you.</p>
+        </div>
+    </div>
+
+    <!-- Contact Options -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Multiple channels to reach our team — in English, Portuguese, or Spanish.</p>
+            <div class="contact-grid">
+
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>WhatsApp Support</h3>
+                    <p>Chat with our team directly via WhatsApp — the same platform you use every day.</p>
+                    <div class="response-time">⏱ Typically within 2–4 hours</div><br>
+                    <a href="https://wa.me/15618035111" class="btn-card" target="_blank">Message Us on WhatsApp</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email Support</h3>
+                    <p>Send us a detailed message and we'll respond with a full resolution or next steps.</p>
+                    <div class="response-time">⏱ Within 1 business day</div><br>
+                    <a href="mailto:support@catalyticverticals.com" class="btn-card">Send Email</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">🐄</div>
+                    <h3>ZapManejo Help</h3>
+                    <p>Questions about cattle protocols, IATF recording, RFID, or platform features? We've got you.</p>
+                    <div class="response-time">⏱ Priority queue for active users</div><br>
+                    <a href="https://zapmanejo.com" class="btn-card" target="_blank">Visit ZapManejo.com</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Phone</h3>
+                    <p>For urgent account or billing issues, call us during business hours.</p>
+                    <div class="response-time">⏱ Live during business hours</div><br>
+                    <a href="tel:+15618035111" class="btn-card">+1 (561) 803-5111</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- System Status -->
+    <section class="status-section">
+        <div class="container-narrow">
+            <div class="status-banner">
+                <div class="status-dot"></div>
+                <div class="status-text">
+                    <h4>All Systems Operational</h4>
+                    <p>ZapManejo platform and WhatsApp integrations are running normally. For real-time updates, contact our support team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container-narrow">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find quick answers to the most common questions.</p>
+
+            <div class="faq-tabs">
+                <button class="faq-tab active" onclick="showFaqGroup('zapmanejo', this)">ZapManejo</button>
+                <button class="faq-tab" onclick="showFaqGroup('account', this)">Account &amp; Billing</button>
+                <button class="faq-tab" onclick="showFaqGroup('technical', this)">Technical</button>
+                <button class="faq-tab" onclick="showFaqGroup('general', this)">General</button>
+            </div>
+
+            <!-- ZapManejo FAQs -->
+            <div class="faq-group active" id="faq-zapmanejo">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How do I record an IATF protocol in ZapManejo? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">ZapManejo guides you through each phase of the IATF protocol (D0 through D11) via WhatsApp messages. Simply respond to the prompts in your ZapManejo conversation to log implants, hormones, insemination dates, and pregnancy confirmation. Voice messages are also supported. Contact support if you need a walkthrough of your first protocol.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Does ZapManejo support RFID ear tags? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">Yes, ZapManejo supports RFID integration via Bluetooth HID readers. You can scan RFID tags directly into the WhatsApp interface, linking each tag to an animal's complete record. For setup assistance, contact our support team who can walk you through the pairing process for your specific reader model.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I use ZapManejo in Portuguese? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">Absolutely. ZapManejo is fully trilingual — Portuguese, Spanish, and English. The platform detects your preferred language automatically, and you can switch at any time by messaging "idioma" to your ZapManejo number. All prompts, confirmations, and reports are available in all three languages.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How many animals can I manage in ZapManejo? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">ZapManejo is designed for medium to large operations, with no hard cap on animal count. Plans are tiered based on herd size. Contact us at <a href="mailto:support@catalyticverticals.com">support@catalyticverticals.com</a> for plan details and pricing tailored to your operation's size.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I export my cattle records? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">Yes. You can request an export of all your cattle data at any time during an active subscription. Records are exported in CSV format compatible with spreadsheet applications. Contact support to initiate an export.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Is my farm data secure? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">Yes. All data is encrypted in transit (TLS) and at rest. Your farm data belongs to you and is never sold or shared with third parties except as required to deliver the service. See our <a href="privacy-policy.html">Privacy Policy</a> for full details.</div>
+                </div>
+            </div>
+
+            <!-- Account & Billing FAQs -->
+            <div class="faq-group" id="faq-account">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What payment methods are accepted? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">We accept major credit and debit cards (Visa, Mastercard, American Express) processed securely through Stripe. Brazilian customers can also pay via Pix through EBANX. We do not accept cash or checks at this time.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can I pay in Brazilian Reais (BRL)? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">Yes. Brazilian customers can pay in BRL via Pix through our EBANX integration. Pricing in BRL is displayed at checkout. Exchange rates are applied at the time of purchase.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How do I cancel my subscription? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">You can cancel at any time by contacting our support team via WhatsApp or email. Your access continues until the end of the current billing period. After cancellation, your data remains available for export for 30 days. See our <a href="terms-of-service.html">Terms of Service</a> for full details.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do you offer refunds? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">New subscribers may request a full refund within 7 days of their initial purchase if they have not meaningfully used the platform. After this window, subscriptions are non-refundable. Contact <a href="mailto:support@catalyticverticals.com">support@catalyticverticals.com</a> to initiate a refund request.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How do I update my billing information? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">Contact our support team via WhatsApp or email and we'll send you a secure link to update your payment method. We do not store or handle raw card details directly — all payment data is managed by Stripe or EBANX.</div>
+                </div>
+            </div>
+
+            <!-- Technical FAQs -->
+            <div class="faq-group" id="faq-technical">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What WhatsApp number do I use to access ZapManejo? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">Your dedicated ZapManejo WhatsApp number is provided upon account activation. Save it as a contact on your phone and send a message to get started. If you've lost your number, contact support and we'll resend your onboarding details.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        ZapManejo isn't responding to my messages. What do I do? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">First, check that your internet connection is active and that WhatsApp itself is working normally. If the issue persists for more than 15 minutes, contact us at <a href="mailto:support@catalyticverticals.com">support@catalyticverticals.com</a> or call +1 (561) 803-5111. Include your account email and a description of the last message you sent.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Can multiple people on my farm use the same ZapManejo account? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">Yes, multi-user access is supported. Each user connects via their own WhatsApp number and is associated with your farm account. Permissions can be configured so that field workers, veterinarians, and managers each have appropriate access levels. Contact support to set up additional users.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Does ZapManejo work without internet? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">ZapManejo requires a data connection to sync records, as it operates through WhatsApp. In areas with poor connectivity, WhatsApp messages will queue and send when a connection is re-established. We recommend drafting notes locally and sending when you have signal. Offline-first functionality is on our product roadmap.</div>
+                </div>
+            </div>
+
+            <!-- General FAQs -->
+            <div class="faq-group" id="faq-general">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What is Catalytic Verticals? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">Catalytic Verticals LLC is a Florida-based technology company that builds WhatsApp-native business management software for specific industry verticals. Our flagship product is ZapManejo, a cattle and livestock management platform for Brazilian ranchers. We also develop education technology, translation services, and custom enterprise WhatsApp integrations.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Do you offer a free trial? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">Yes, we offer a limited trial period for new users to explore ZapManejo's core features. Contact our team via WhatsApp or email to request a trial access for your operation.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        I'm interested in a custom WhatsApp integration for my industry. How do I get started? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">We love custom vertical projects. Fill out the contact form on our <a href="index.html#contact">main website</a> or email us at <a href="mailto:info@catalyticverticals.com">info@catalyticverticals.com</a> with a description of your industry and integration needs. We'll schedule a strategy session to explore fit and scope.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Are your services available outside Brazil? <span class="faq-chevron">▼</span>
+                    </button>
+                    <div class="faq-answer">ZapManejo is currently optimized for the Brazilian ranching market, though the platform is trilingual and can support users in any WhatsApp-accessible region. Our custom vertical development services are available globally. Contact us to discuss your specific geography and requirements.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours & Escalation -->
+    <section class="hours-section">
+        <div class="container-narrow">
+            <h2 class="section-title">Support Hours &amp; Escalation</h2>
+            <p class="section-subtitle">We're based in Florida but serve ranchers across Brazil and beyond.</p>
+            <div class="hours-grid">
+                <div class="hours-card">
+                    <h3>📅 Support Hours</h3>
+                    <div class="hours-row">
+                        <span class="day">Monday – Friday</span>
+                        <span class="time">9:00 AM – 6:00 PM ET</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="day">Saturday</span>
+                        <span class="time">10:00 AM – 2:00 PM ET</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="day">Sunday</span>
+                        <span class="time">Emergency only</span>
+                    </div>
+                    <div class="hours-row">
+                        <span class="day">WhatsApp (async)</span>
+                        <span class="time">24 / 7</span>
+                    </div>
+                    <p style="margin-top:1rem; font-size:0.85rem; color:#888;">Brasília Time (BRT) is 1–2 hours ahead of ET depending on daylight saving.</p>
+                </div>
+                <div class="hours-card">
+                    <h3>🚨 Escalation Path</h3>
+                    <div class="escalation-path">
+                        <h4>How we handle your issue</h4>
+                        <div class="escalation-step">
+                            <div class="step-num">1</div>
+                            <span><strong>WhatsApp or Email</strong> — First contact. Most issues resolved here.</span>
+                        </div>
+                        <div class="escalation-step">
+                            <div class="step-num">2</div>
+                            <span><strong>Senior Support</strong> — Complex technical or account issues escalated within 4 hours.</span>
+                        </div>
+                        <div class="escalation-step">
+                            <div class="step-num">3</div>
+                            <span><strong>Engineering</strong> — Platform-level bugs escalated to our dev team same business day.</span>
+                        </div>
+                        <div class="escalation-step">
+                            <div class="step-num">4</div>
+                            <span><strong>Leadership</strong> — Critical data or billing escalations reach a company principal directly.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>
+                <a href="index.html">Home</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="customer-support.html">Support</a>
+            </p>
+            <p style="margin-top:0.75rem;">&copy; 2025 Catalytic Verticals LLC. All rights reserved. | <a href="mailto:support@catalyticverticals.com">support@catalyticverticals.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+            // Close all in this group
+            item.closest('.faq-group').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+        function showFaqGroup(group, tabEl) {
+            document.querySelectorAll('.faq-group').forEach(g => g.classList.remove('active'));
+            document.querySelectorAll('.faq-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('faq-' + group).classList.add('active');
+            tabEl.classList.add('active');
+        }
+    </script>
+</body>
+</html>
