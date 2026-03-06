@@ -429,8 +429,30 @@
         footer {
             background: #1a1a1a;
             color: white;
-            padding: 2rem 0;
+            padding: 2.5rem 0;
             text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.25rem 1.5rem;
+            margin-bottom: 1rem;
+            list-style: none;
+        }
+        .footer-links a {
+            color: #87ceeb;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        .footer-copy {
+            font-size: 0.85rem;
+            color: #999;
         }
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -494,15 +516,16 @@
                 <li><a href="#verticals">Verticals</a></li>
                 <li><a href="#case-study">Success Story</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <div class="language-switcher">
-                    <span class="lang-tab active" onclick="switchLanguage('en')">EN</span>
-                    <span class="lang-tab" onclick="switchLanguage('pt')">PT</span>
-                    <span class="lang-tab" onclick="switchLanguage('es')">ES</span>
-                </div>
             </ul>
+            <div class="language-switcher">
+                <span class="lang-tab active" onclick="switchLanguage('en', event)">EN</span>
+                <span class="lang-tab" onclick="switchLanguage('pt', event)">PT</span>
+                <span class="lang-tab" onclick="switchLanguage('es', event)">ES</span>
+            </div>
             <a href="#contact" class="cta-button">Get Started</a>
         </nav>
     </header>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -517,6 +540,7 @@
             </div>
         </div>
     </section>
+
     <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
@@ -530,6 +554,7 @@
             </div>
         </div>
     </section>
+
     <!-- Our Approach Section -->
     <section id="approach" class="section approach">
         <div class="container">
@@ -555,6 +580,7 @@
             </div>
         </div>
     </section>
+
     <!-- Our Verticals Section -->
     <section id="verticals" class="section">
         <div class="container">
@@ -594,6 +620,7 @@
             </div>
         </div>
     </section>
+
     <!-- Case Study Section -->
     <section id="case-study" class="section case-study">
         <div class="container">
@@ -625,6 +652,7 @@
             </div>
         </div>
     </section>
+
     <!-- Why WhatsApp Section -->
     <section class="section">
         <div class="container">
@@ -655,6 +683,7 @@
             </div>
         </div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section contact">
         <div class="container">
@@ -724,12 +753,24 @@
             </div>
         </div>
     </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Catalytic Verticals LLC. All rights reserved. | Let us build your vertical empire.</p>
+            <ul class="footer-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#approach">Our Approach</a></li>
+                <li><a href="#verticals">Verticals</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://zapmanejo.com" target="_blank">ZapManejo.com</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html">Terms of Service</a></li>
+                <li><a href="customer-support.html">Customer Support</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2025 Catalytic Verticals LLC. All rights reserved. | Let us build your vertical empire.</p>
         </div>
     </footer>
+
     <script>
         // Language translations object
         const translations = {
@@ -1049,8 +1090,10 @@
                 alertThankYou: "¡Gracias por tu interés! Te contactaremos dentro de 24 horas para programar tu sesión estratégica."
             }
         };
+
         let currentLanguage = 'en';
-        function switchLanguage(lang) {
+
+        function switchLanguage(lang, event) {
             currentLanguage = lang;
            
             // Update active tab
@@ -1061,115 +1104,106 @@
             const t = translations[lang];
            
             // Update navigation
-            updateTextById('a[href="#about"]', t.navAbout);
-            updateTextById('a[href="#approach"]', t.navApproach);
-            updateTextById('a[href="#verticals"]', t.navVerticals);
-            updateTextById('a[href="#case-study"]', t.navCaseStudy);
-            updateTextById('a[href="#contact"]', t.navContact);
-            updateTextById('a[href="#contact"].cta-button', t.ctaGetStarted);
+            updateText('a[href="#about"]', t.navAbout);
+            updateText('a[href="#approach"]', t.navApproach);
+            updateText('a[href="#verticals"]', t.navVerticals);
+            updateText('a[href="#case-study"]', t.navCaseStudy);
+            updateText('a[href="#contact"].nav-links a', t.navContact);
+            updateText('a[href="#contact"].cta-button', t.ctaGetStarted);
            
             // Update hero section
-            updateTextById('.hero h1', t.heroTitle);
-            updateTextById('.hero .tagline', t.heroTagline);
-            updateTextById('.hero p', t.heroDescription);
-            updateTextById('.btn-primary', t.heroBtnPrimary);
-            updateTextById('.btn-secondary', t.heroBtnSecondary);
+            updateText('.hero h1', t.heroTitle);
+            updateText('.hero .tagline', t.heroTagline);
+            updateText('.hero p', t.heroDescription);
+            updateText('.btn-primary', t.heroBtnPrimary);
+            updateText('.btn-secondary', t.heroBtnSecondary);
            
             // Update about section
-            updateTextById('#about .section-title', t.aboutTitle);
-            updateTextById('#about .about-content p', t.aboutDescription);
-            updateTextById('#about .contact-info p:nth-child(1)', t.aboutPhone);
-            updateTextById('#about .contact-info p:nth-child(2)', t.aboutAddress);
+            updateText('#about .section-title', t.aboutTitle);
+            updateText('#about .about-content p', t.aboutDescription);
+            updateText('#about .contact-info p:nth-child(1)', t.aboutPhone);
+            updateText('#about .contact-info p:nth-child(2)', t.aboutAddress);
            
             // Update approach section
-            updateTextById('#approach .section-title', t.approachTitle);
-            updateTextById('#approach .section-subtitle', t.approachSubtitle);
+            updateText('#approach .section-title', t.approachTitle);
+            updateText('#approach .section-subtitle', t.approachSubtitle);
            
             const approachCards = document.querySelectorAll('.approach-card');
             if (approachCards.length >= 3) {
-                updateTextById(approachCards[0].querySelector('h3'), t.approachCard1Title);
-                updateTextById(approachCards[0].querySelector('p'), t.approachCard1Text);
-                updateTextById(approachCards[1].querySelector('h3'), t.approachCard2Title);
-                updateTextById(approachCards[1].querySelector('p'), t.approachCard2Text);
-                updateTextById(approachCards[2].querySelector('h3'), t.approachCard3Title);
-                updateTextById(approachCards[2].querySelector('p'), t.approachCard3Text);
+                setText(approachCards[0].querySelector('h3'), t.approachCard1Title);
+                setText(approachCards[0].querySelector('p'), t.approachCard1Text);
+                setText(approachCards[1].querySelector('h3'), t.approachCard2Title);
+                setText(approachCards[1].querySelector('p'), t.approachCard2Text);
+                setText(approachCards[2].querySelector('h3'), t.approachCard3Title);
+                setText(approachCards[2].querySelector('p'), t.approachCard3Text);
             }
            
             // Update verticals section
-            updateTextById('#verticals .section-title', t.verticalsTitle);
-            updateTextById('#verticals .section-subtitle', t.verticalsSubtitle);
+            updateText('#verticals .section-title', t.verticalsTitle);
+            updateText('#verticals .section-subtitle', t.verticalsSubtitle);
            
             const verticalCards = document.querySelectorAll('.vertical-card');
             if (verticalCards.length >= 4) {
-                // ZapManejo
-                updateTextById(verticalCards[0].querySelector('.subtitle'), t.zapManejoSubtitle);
-                updateTextById(verticalCards[0].querySelector('p'), t.zapManejoDescription);
-                updateTextById(verticalCards[0].querySelector('.vertical-link'), t.zapManejoLink);
-               
-                // Education
-                updateTextById(verticalCards[1].querySelector('.subtitle'), t.educationSubtitle);
-                updateTextById(verticalCards[1].querySelector('p'), t.educationDescription);
-               
-                // Translation
-                updateTextById(verticalCards[2].querySelector('.subtitle'), t.translationSubtitle);
-                updateTextById(verticalCards[2].querySelector('p'), t.translationDescription);
-               
-                // Custom
-                updateTextById(verticalCards[3].querySelector('.subtitle'), t.customSubtitle);
-                updateTextById(verticalCards[3].querySelector('p'), t.customDescription);
-                updateTextById(verticalCards[3].querySelector('.vertical-link'), t.customLink);
+                setText(verticalCards[0].querySelector('.subtitle'), t.zapManejoSubtitle);
+                setText(verticalCards[0].querySelector('p'), t.zapManejoDescription);
+                setText(verticalCards[0].querySelector('.vertical-link'), t.zapManejoLink);
+                setText(verticalCards[1].querySelector('.subtitle'), t.educationSubtitle);
+                setText(verticalCards[1].querySelector('p'), t.educationDescription);
+                setText(verticalCards[2].querySelector('.subtitle'), t.translationSubtitle);
+                setText(verticalCards[2].querySelector('p'), t.translationDescription);
+                setText(verticalCards[3].querySelector('.subtitle'), t.customSubtitle);
+                setText(verticalCards[3].querySelector('p'), t.customDescription);
+                setText(verticalCards[3].querySelector('.vertical-link'), t.customLink);
             }
            
             // Update case study section
-            updateTextById('#case-study h2', t.caseStudyTitle);
+            updateText('#case-study h2', t.caseStudyTitle);
             const caseStudyPs = document.querySelectorAll('.case-study-text p');
             if (caseStudyPs.length >= 2) {
-                updateTextById(caseStudyPs[0], t.caseStudyText1);
-                updateTextById(caseStudyPs[1], t.caseStudyText2);
+                setText(caseStudyPs[0], t.caseStudyText1);
+                setText(caseStudyPs[1], t.caseStudyText2);
             }
-            updateTextById('.case-study .btn-primary', t.caseStudyBtn);
+            updateText('.case-study .btn-primary', t.caseStudyBtn);
            
             const stats = document.querySelectorAll('.stat');
             if (stats.length >= 4) {
-                updateTextById(stats[0].querySelector('div:last-child'), t.statCattle);
-                updateTextById(stats[1].querySelector('div:last-child'), t.statAdoption);
-                updateTextById(stats[2].querySelector('div:last-child'), t.statUptime);
-                updateTextById(stats[3].querySelector('div:last-child'), t.statIntegration);
+                setText(stats[0].querySelector('div:last-child'), t.statCattle);
+                setText(stats[1].querySelector('div:last-child'), t.statAdoption);
+                setText(stats[2].querySelector('div:last-child'), t.statUptime);
+                setText(stats[3].querySelector('div:last-child'), t.statIntegration);
             }
            
             // Update WhatsApp section
             const sections = document.querySelectorAll('.section');
-            const whatsappSection = sections[sections.length - 2]; // Second to last section
+            const whatsappSection = sections[sections.length - 2];
             if (whatsappSection) {
-                updateTextById(whatsappSection.querySelector('.section-title'), t.whatsappTitle);
-                updateTextById(whatsappSection.querySelector('.section-subtitle'), t.whatsappSubtitle);
+                setText(whatsappSection.querySelector('.section-title'), t.whatsappTitle);
+                setText(whatsappSection.querySelector('.section-subtitle'), t.whatsappSubtitle);
                
                 const whatsappStats = whatsappSection.querySelectorAll('.whatsapp-stat');
                 if (whatsappStats.length >= 4) {
-                    updateTextById(whatsappStats[0].querySelector('h3'), t.whatsappStat1Title);
-                    updateTextById(whatsappStats[0].querySelector('p'), t.whatsappStat1Text);
-                    updateTextById(whatsappStats[1].querySelector('h3'), t.whatsappStat2Title);
-                    updateTextById(whatsappStats[1].querySelector('p'), t.whatsappStat2Text);
-                    updateTextById(whatsappStats[2].querySelector('h3'), t.whatsappStat3Title);
-                    updateTextById(whatsappStats[2].querySelector('p'), t.whatsappStat3Text);
-                    updateTextById(whatsappStats[3].querySelector('h3'), t.whatsappStat4Title);
-                    updateTextById(whatsappStats[3].querySelector('p'), t.whatsappStat4Text);
+                    setText(whatsappStats[0].querySelector('h3'), t.whatsappStat1Title);
+                    setText(whatsappStats[0].querySelector('p'), t.whatsappStat1Text);
+                    setText(whatsappStats[1].querySelector('h3'), t.whatsappStat2Title);
+                    setText(whatsappStats[1].querySelector('p'), t.whatsappStat2Text);
+                    setText(whatsappStats[2].querySelector('h3'), t.whatsappStat3Title);
+                    setText(whatsappStats[2].querySelector('p'), t.whatsappStat3Text);
+                    setText(whatsappStats[3].querySelector('h3'), t.whatsappStat4Title);
+                    setText(whatsappStats[3].querySelector('p'), t.whatsappStat4Text);
                 }
             }
            
             // Update contact section
-            updateTextById('#contact .section-title', t.contactTitle);
-            updateTextById('#contact .section-subtitle', t.contactSubtitle);
-            updateTextById('.contact-form h3', t.contactFormTitle);
+            updateText('#contact .section-title', t.contactTitle);
+            updateText('#contact .section-subtitle', t.contactSubtitle);
+            updateText('.contact-form h3', t.contactFormTitle);
            
-            // Update form labels
-            updateTextById('label[for="name"]', t.contactName);
-            updateTextById('label[for="company"]', t.contactCompany);
-            updateTextById('label[for="email"]', t.contactEmail);
-            updateTextById('label[for="vertical"]', t.contactVertical);
-            updateTextById('label[for="project-scope"]', t.contactScope);
+            updateText('label[for="name"]', t.contactName);
+            updateText('label[for="company"]', t.contactCompany);
+            updateText('label[for="email"]', t.contactEmail);
+            updateText('label[for="vertical"]', t.contactVertical);
+            updateText('label[for="project-scope"]', t.contactScope);
            
-            // Update form options
             const selectOptions = document.querySelectorAll('#vertical option');
             if (selectOptions.length >= 8) {
                 selectOptions[0].textContent = t.contactVerticalSelect;
@@ -1185,9 +1219,8 @@
             const textarea = document.querySelector('#project-scope');
             if (textarea) textarea.placeholder = t.contactScopePlaceholder;
            
-            updateTextById('button[type="submit"]', t.contactSubmit);
+            updateText('button[type="submit"]', t.contactSubmit);
            
-            // Update contact info
             const contactInfo = document.querySelector('.contact-grid > div:last-child');
             if (contactInfo) {
                 const headings = contactInfo.querySelectorAll('h3, h4');
@@ -1209,28 +1242,30 @@
                 }
             }
            
-            // Update footer
-            updateTextById('footer p', t.footerText);
+            // Update footer copy
+            updateText('.footer-copy', t.footerText);
         }
-        function updateTextById(selector, text) {
-            const element = typeof selector === 'string' ? document.querySelector(selector) : selector;
-            if (element && text) {
-                element.textContent = text;
-            }
+
+        function updateText(selector, text) {
+            const el = document.querySelector(selector);
+            if (el && text) el.textContent = text;
         }
+
+        function setText(el, text) {
+            if (el && text) el.textContent = text;
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
+
         // Form submission handler
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
